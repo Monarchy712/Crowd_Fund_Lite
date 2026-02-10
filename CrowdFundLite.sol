@@ -20,7 +20,7 @@ contract CrowdFundLite{
 
     constructor(uint _goalAmount, uint _durationInSeconds){
         owner = msg.sender;
-        goalAmount = _goalAmount*10^18;
+        goalAmount = _goalAmount*10**18;
         deadline = block.timestamp + _durationInSeconds;
         state = CampaignState.Active;
     }
@@ -60,5 +60,6 @@ contract CrowdFundLite{
         contributions[msg.sender] = 0;
         payable(msg.sender).transfer(contributions[msg.sender]);
     }
+
 
 }
